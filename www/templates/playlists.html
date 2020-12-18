@@ -1,0 +1,45 @@
+<ion-view view-title="Obez miyim ?">
+  <ion-content>
+    <!--Bilgi kartı-->
+ <div class="card">
+  <div class="item item-divider positive">
+    Lütfen sizden istenilen bilgileri giriniz
+  </div>
+</div>
+
+
+<div class="list">
+  <div class="item range range-positive">
+    Boy
+    <input type="range" ng-model="boy" min="0.00" max="2.50" step=".01"  ng-change="hesapla(boy,kilo)" >
+    {{boy}} m
+  </div>
+</div>
+
+<div class="list">
+  <div class="item range range-positive">
+    Kilo
+    <input type="range" ng-model="kilo" min="0" max="400"  ng-change="hesapla(boy,kilo)">
+    {{kilo}} kg
+  </div>
+
+</div>
+ <div class="card">
+  <div class="item item-text-wrap  balanced">
+    <h2>Vücut kitle indeksi : {{sonuc}} VKİ</h2>
+    <h2>Durum {{sonuc == 0 ? "-":sonuc<18 ? "Zayıf" : sonuc<25 ? "Normal" : sonuc<30 ? "Fazla Kilolu" :sonuc<40 ? "Obez" : "İleri derecede obez"}}</h2>
+  </div>
+</div>
+
+</div>
+ <div class="card">
+  <div class="item item-text-wrap  balanced">
+  	<img ng-src="https://i12.haber7.net//haber/haber7/photos/2020/40/vucut_kitle_indeksi_hesaplama_beden_kitle_boy_kilo_indeksi_nasil_ogrenilir_1601543136_24.jpg"
+    width="320" height="200">
+  </div>
+</div>
+
+
+
+  </ion-content>
+</ion-view>
